@@ -1,0 +1,42 @@
+name: App
+options:
+  bundleIdPrefix: com.modularzing.RIBs
+  defaultConfig: Debug
+  createIntermediateGroups: true
+  transitivelyLinkDependencies: true
+  settingPresets: none
+  tabWidth: 2
+  indentWidth: 2
+  deploymentTarget:
+    iOS: 13.0
+configs:
+  Debug: debug
+  Profile: debug
+  Release: release
+configFiles:
+  Debug: ../../Configurations/Project-Debug.xcconfig
+  Profile: ../../Configurations/Project-Profile.xcconfig
+  Release: ../../Configurations/Project-Release.xcconfig
+
+fileGroups:
+  - ../../Configurations/Project-Shared.xcconfig
+
+targets:
+  App:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+      - path: Resources
+      - path: Supporting Files
+    configFiles:
+      Debug: ../../Configurations/App-Debug.xcconfig
+      Profile: ../../Configurations/App-Profile.xcconfig
+      Release: ../../Configurations/App-Release.xcconfig
+    attributes:
+      ProvisioningStyle: Manual
+    dependencies:
+      - sdk: Foundation.framework
+      - sdk: UIKit.framework
+    settings:
+      INFOPLIST_FILE: ./Supporting Files/Info.plist

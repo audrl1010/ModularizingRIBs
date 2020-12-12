@@ -1,0 +1,23 @@
+name: Detail
+options:
+  bundleIdPrefix: com.modularizing.ribs
+  deploymentTarget:
+    iOS: 13.0
+configs:
+  Debug: debug
+  Profile: debug
+  Release: release
+
+targets:
+  Detail:
+    templates: [StaticFramework]
+    sources:
+      - path: Sources
+
+  DetailTests:
+    templates: [FrameworkUnitTest]
+    templateAttributes:
+      testTarget: Detail
+
+include:
+  - ../templates.yml

@@ -1,0 +1,33 @@
+name: Common
+options:
+  bundleIdPrefix: com.modularizing.ribs
+  deploymentTarget:
+    iOS: 13.0
+configs:
+  Debug: debug
+  Profile: debug
+  Release: release
+
+targets:
+  Common:
+    templates: [Framework]
+    sources:
+      - path: Sources
+      - path: Resources
+    preBuildScripts:
+      - name: Generate R.swift
+        path: /bin/sh
+        inputFiles:
+          - $TEMP_DIR/rswift-lastrun
+        outputFiles:
+          - $SRCROOT/Projects/Common/Resources/R.generated.swift
+        script: |
+          ${PODS_ROOT}/R.swift/rswift generate ${SRCROOT}/Projects/Common/Resources/R.generated.swift
+
+  CommonTests:
+    templates: [FrameworkUnitTest]
+    templateAttributes:
+      testTarget: Common
+
+include:
+  - ../templates.yml
