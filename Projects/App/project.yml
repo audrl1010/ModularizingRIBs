@@ -18,8 +18,20 @@ configFiles:
   Profile: ../../Configurations/Project-Profile.xcconfig
   Release: ../../Configurations/Project-Release.xcconfig
 
+settings:
+  base:
+    SWIFT_VERSION: 5.3
+
 fileGroups:
   - ../../Configurations/Project-Shared.xcconfig
+
+# projectReferences:
+#   Common:
+#     path: ../Common/Common.xcodeproj
+#   Tasks:
+#     path: ../Tasks/Tasks.xcodeproj
+#   TaskEditing:
+#     path: ../TaskEditing/TaskEditing.xcodeproj
 
 targets:
   App:
@@ -38,5 +50,11 @@ targets:
     dependencies:
       - sdk: Foundation.framework
       - sdk: UIKit.framework
+      - framework: ../../Common.framework
+        implicit: true
+      - framework: ../../Tasks.framework
+        implicit: true
+      - framework: ../../TaskEditing.framework
+        implicit: true
     settings:
       INFOPLIST_FILE: ./Supporting Files/Info.plist

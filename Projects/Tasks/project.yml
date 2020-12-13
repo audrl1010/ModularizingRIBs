@@ -1,0 +1,32 @@
+name: Tasks
+options:
+  bundleIdPrefix: com.modularizing.ribs
+  deploymentTarget:
+    iOS: 13.0
+configs:
+  Debug: debug
+  Profile: debug
+  Release: release
+
+projectReferences:
+  Common:
+    path: ../Common/Common.xcodeproj
+
+targets:
+  Tasks:
+    templates: [StaticFramework]
+    dependencies:
+      - framework: ../../Common.framework
+        implicit: true
+  TasksTests:
+    templates: [FrameworkUnitTest]
+    templateAttributes:
+      testTarget: Tasks
+
+  TasksAppEnvironmentTests:
+    templates: [AppEnvironmentTests]
+    templateAttributes:
+      testTarget: Tasks
+
+include:
+  - ../templates.yml

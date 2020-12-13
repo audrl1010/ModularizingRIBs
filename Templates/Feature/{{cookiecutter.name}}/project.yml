@@ -1,0 +1,32 @@
+name: {{cookiecutter.name}}
+options:
+  bundleIdPrefix: com.modularizing.ribs
+  deploymentTarget:
+    iOS: 13.0
+configs:
+  Debug: debug
+  Profile: debug
+  Release: release
+projectReferences:
+  Common:
+    path: ../Common/Common.xcodeproj
+
+targets:
+  {{cookiecutter.name}}:
+    templates: [StaticFramework]
+    dependencies:
+      - framework: ../../Common.framework
+        implicit: true
+
+  {{cookiecutter.name}}Tests:
+    templates: [FrameworkUnitTest]
+    templateAttributes:
+      testTarget: {{cookiecutter.name}}
+
+  {{cookiecutter.name}}AppEnvironmentTests:
+    templates: [AppEnvironmentTests]
+    templateAttributes:
+      testTarget: {{cookiecutter.name}}
+
+include:
+  - ../templates.yml

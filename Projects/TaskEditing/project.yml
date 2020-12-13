@@ -1,0 +1,32 @@
+name: TaskEditing
+options:
+  bundleIdPrefix: com.modularizing.ribs
+  deploymentTarget:
+    iOS: 13.0
+configs:
+  Debug: debug
+  Profile: debug
+  Release: release
+projectReferences:
+  Common:
+    path: ../Common/Common.xcodeproj
+
+targets:
+  TaskEditing:
+    templates: [StaticFramework]
+    dependencies:
+      - framework: ../../Common.framework
+        implicit: true
+
+  TaskEditingTests:
+    templates: [FrameworkUnitTest]
+    templateAttributes:
+      testTarget: TaskEditing
+
+  TaskEditingAppEnvironmentTests:
+    templates: [AppEnvironmentTests]
+    templateAttributes:
+      testTarget: TaskEditing
+
+include:
+  - ../templates.yml

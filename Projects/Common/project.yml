@@ -20,9 +20,9 @@ targets:
         inputFiles:
           - $TEMP_DIR/rswift-lastrun
         outputFiles:
-          - $SRCROOT/Projects/Common/Resources/R.generated.swift
+          - $SRCROOT/Resources/R.generated.swift
         script: |
-          ${PODS_ROOT}/R.swift/rswift generate ${SRCROOT}/Projects/Common/Resources/R.generated.swift
+          ${PODS_ROOT}/R.swift/rswift generate ${SRCROOT}/Resources/R.generated.swift
 
   CommonTests:
     templates: [FrameworkUnitTest]
