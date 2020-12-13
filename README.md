@@ -19,20 +19,23 @@ $ make framework
 ## 프로젝트 구조
 
 App
-RIB들을 조립하는 하여 실제 구동 되는 앱이다.
+
+- RIB들을 조립하는 하여 실제 구동 되는 앱이다.
 
 Tasks (Viewable RIB)
-Task 리스트를 보여주는 기능 제공
 
+- Task 리스트를 보여주는 기능 제공
 - static framework
 
 TaskEditing (Viewable RIB)
-Task를 추가 하거나 수정할 수 있는 기능 제공
 
+- Task를 추가 하거나 수정할 수 있는 기능 제공
 - static framework
 
 Common
-공유해야 하는 파일들을 모아 놓는 곳
+
+- 공유해야 하는 파일들을 모아 놓는 곳
+
 다음 폴더들을 포함하고 있다.
 
 - Models: 모델들
