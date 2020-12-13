@@ -1,22 +1,13 @@
 # ModularizingRIBs
 
-## 프로젝트 설정
-
-```bash
-$ brew install
-$ bundle install
-$ pip install pipenv
-$ ./setup.sh
-```
-
-## 프레임워크 템플릿 이용하는 방법
-
-```bash
-
-$ make framework
-```
+해당 앱은 기능별로 RIB을 프레임워크로 분리하여 Todo 앱을 어떻게 만드는지에 대해서 설명하는 프로젝트이다.
 
 ## 프로젝트 구조
+
+계층
+App
+Tasks, Task (Feature RIB - Static Framework)
+Common (Dynamic Framework)
 
 App
 
@@ -44,3 +35,19 @@ Common
 - Repositories: 레파지토리들
 - Utils: 유틸리티들
 - dynamic framework
+
+## 프로젝트 설정
+
+```bash
+$ brew install
+$ bundle install
+$ pip install pipenv
+$ ./setup.sh
+```
+
+## 프레임워크 템플릿 이용하는 방법
+
+```bash
+
+$ make framework
+```
