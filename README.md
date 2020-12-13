@@ -50,5 +50,5 @@ $ ./setup.sh
 
 ```bash
 
-$ make framework
+$ make feature
 ```
