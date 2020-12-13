@@ -5,9 +5,10 @@
 ## 프로젝트 구조
 
 계층
-App
-Tasks, Task (Feature RIB - Static Framework)
-Common (Dynamic Framework)
+
+- App
+- Tasks, Task (Feature RIB - Static Framework)
+- Common (Dynamic Framework)
 
 App
 
